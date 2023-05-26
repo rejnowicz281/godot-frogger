@@ -132,6 +132,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D"]
+collision_mask = 15
 script = ExtResource("1_owjyh")
 metadata/_edit_group_ = true
 

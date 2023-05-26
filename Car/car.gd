@@ -38,4 +38,5 @@ func _process(delta):
 	position.x += speed * delta * direction
 
 func _on_body_entered(body):
-	get_tree().change_scene_to_file("res://OverScreen/over_screen.tscn")
+	if body.name == "Player":
+		get_tree().change_scene_to_file("res://OverScreen/over_screen.tscn")

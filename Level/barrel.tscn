@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://c84ju8lqbqrdb"]
+
+[ext_resource type="Texture2D" uid="uid://dd161w8bh6muk" path="res://graphics/Level/Objects.png" id="1_nonq2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_43kkn"]
+size = Vector2(26, 19)
+
+[node name="Barrel" type="StaticBody2D"]
+collision_layer = 8
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_nonq2")
+region_enabled = true
+region_rect = Rect2(131, 22, 26, 36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_43kkn")

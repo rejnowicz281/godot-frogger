@@ -1,6 +1,5 @@
-[gd_scene load_steps=4 format=3 uid="uid://dtbjiu38rk6n5"]
+[gd_scene load_steps=3 format=3 uid="uid://dtbjiu38rk6n5"]
 
-[ext_resource type="PackedScene" uid="uid://cyd1c084spv4t" path="res://Car/car.tscn" id="1_inh60"]
 [ext_resource type="Script" path="res://Level/level.gd" id="1_qg7rp"]
 [ext_resource type="PackedScene" uid="uid://yvrylmnrav6r" path="res://Player/player.tscn" id="2_0t3kx"]
 
@@ -8,15 +7,46 @@
 script = ExtResource("1_qg7rp")
 
 [node name="Player" parent="." instance=ExtResource("2_0t3kx")]
-position = Vector2(159, 138)
+position = Vector2(587, 530)
 
-[node name="Car" parent="." instance=ExtResource("1_inh60")]
-position = Vector2(608, 144)
+[node name="Camera2D" type="Camera2D" parent="Player"]
 
-[node name="Timer" type="Timer" parent="."]
-autostart = true
+[node name="StartPositions" type="Node" parent="."]
 
-[node name="CarStart1" type="Marker2D" parent="."]
+[node name="CarStart1" type="Marker2D" parent="StartPositions"]
 position = Vector2(1224, 306)
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="CarStart2" type="Marker2D" parent="StartPositions"]
+position = Vector2(1239, 626)
+
+[node name="CarStart3" type="Marker2D" parent="StartPositions"]
+position = Vector2(1232, 456)
+
+[node name="CarStart4" type="Marker2D" parent="StartPositions"]
+position = Vector2(1224, 156)
+
+[node name="CarStart5" type="Marker2D" parent="StartPositions"]
+position = Vector2(1220, 47)
+
+[node name="CarTimers" type="Node" parent="."]
+
+[node name="Timer1" type="Timer" parent="CarTimers"]
+autostart = true
+
+[node name="Timer2" type="Timer" parent="CarTimers"]
+autostart = true
+
+[node name="Timer3" type="Timer" parent="CarTimers"]
+autostart = true
+
+[node name="Timer4" type="Timer" parent="CarTimers"]
+autostart = true
+
+[node name="Timer5" type="Timer" parent="CarTimers"]
+autostart = true
+
+[connection signal="timeout" from="CarTimers/Timer1" to="." method="_on_timer_1_timeout"]
+[connection signal="timeout" from="CarTimers/Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="timeout" from="CarTimers/Timer3" to="." method="_on_timer_3_timeout"]
+[connection signal="timeout" from="CarTimers/Timer4" to="." method="_on_timer_4_timeout"]
+[connection signal="timeout" from="CarTimers/Timer5" to="." method="_on_timer_5_timeout"]

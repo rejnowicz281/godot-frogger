@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dtbjiu38rk6n5"]
+[gd_scene load_steps=4 format=3 uid="uid://dtbjiu38rk6n5"]
 
 [ext_resource type="Script" path="res://Level/level.gd" id="1_qg7rp"]
 [ext_resource type="PackedScene" uid="uid://yvrylmnrav6r" path="res://Player/player.tscn" id="2_0t3kx"]
+[ext_resource type="Script" path="res://Level/CarTimer.gd" id="3_5s8lj"]
 
 [node name="Level" type="Node"]
 script = ExtResource("1_qg7rp")
@@ -32,21 +33,31 @@ position = Vector2(1220, 47)
 
 [node name="Timer1" type="Timer" parent="CarTimers"]
 autostart = true
+script = ExtResource("3_5s8lj")
 
 [node name="Timer2" type="Timer" parent="CarTimers"]
 autostart = true
+script = ExtResource("3_5s8lj")
 
 [node name="Timer3" type="Timer" parent="CarTimers"]
 autostart = true
+script = ExtResource("3_5s8lj")
 
 [node name="Timer4" type="Timer" parent="CarTimers"]
 autostart = true
+script = ExtResource("3_5s8lj")
 
 [node name="Timer5" type="Timer" parent="CarTimers"]
 autostart = true
+script = ExtResource("3_5s8lj")
 
 [connection signal="timeout" from="CarTimers/Timer1" to="." method="_on_timer_1_timeout"]
+[connection signal="timeout" from="CarTimers/Timer1" to="CarTimers/Timer1" method="_on_timeout"]
 [connection signal="timeout" from="CarTimers/Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="timeout" from="CarTimers/Timer2" to="CarTimers/Timer2" method="_on_timeout"]
 [connection signal="timeout" from="CarTimers/Timer3" to="." method="_on_timer_3_timeout"]
+[connection signal="timeout" from="CarTimers/Timer3" to="CarTimers/Timer3" method="_on_timeout"]
 [connection signal="timeout" from="CarTimers/Timer4" to="." method="_on_timer_4_timeout"]
+[connection signal="timeout" from="CarTimers/Timer4" to="CarTimers/Timer4" method="_on_timeout"]
 [connection signal="timeout" from="CarTimers/Timer5" to="." method="_on_timer_5_timeout"]
+[connection signal="timeout" from="CarTimers/Timer5" to="CarTimers/Timer5" method="_on_timeout"]

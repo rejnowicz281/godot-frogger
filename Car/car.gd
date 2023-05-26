@@ -1,14 +1,14 @@
 extends Area2D
 
-var speed = 250
-var direction
-
 const CARS = [
 	"res://graphics/Car/Grey1.png",
 	"res://graphics/Car/Grey2.png",
 	"res://graphics/Car/Yellow1.png",
 	"res://graphics/Car/Yellow2.png"
 ]
+
+var speed
+var direction
 
 func set_random_texture():
 	var random_id = randi() % CARS.size()
@@ -25,7 +25,11 @@ func set_direction():
 		direction = -1
 		$"Sprite2D".flip_h = false
 
+func set_speed():
+	speed = randi_range(230, 270)
+
 func _ready():
+	set_speed()
 	set_direction()
 	set_random_texture()
 

@@ -1,12 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://dtbjiu38rk6n5"]
+[gd_scene load_steps=4 format=3 uid="uid://dtbjiu38rk6n5"]
 
 [ext_resource type="PackedScene" uid="uid://cyd1c084spv4t" path="res://Car/car.tscn" id="1_inh60"]
-[ext_resource type="PackedScene" uid="uid://c72sh40muf740" path="res://Player/player.tscn" id="2_0t3kx"]
+[ext_resource type="Script" path="res://Level/level.gd" id="1_qg7rp"]
+[ext_resource type="PackedScene" uid="uid://yvrylmnrav6r" path="res://Player/player.tscn" id="2_0t3kx"]
 
 [node name="Level" type="Node"]
+script = ExtResource("1_qg7rp")
 
 [node name="Player" parent="." instance=ExtResource("2_0t3kx")]
 position = Vector2(159, 138)
 
 [node name="Car" parent="." instance=ExtResource("1_inh60")]
-position = Vector2(686, 152)
+position = Vector2(608, 144)
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="CarStart1" type="Marker2D" parent="."]
+position = Vector2(1224, 306)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

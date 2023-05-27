@@ -19,3 +19,17 @@ func _on_timer_4_timeout(): spawn_car(4)
 func _on_timer_5_timeout(): spawn_car(5)
 
 func _on_timer_6_timeout(): spawn_car(6)
+
+func reset_player_pos():
+	$Entities/Player.position = $PlayerStartPos.position
+
+func _ready():
+	reset_player_pos()
+	
+func _process(delta):
+	$Score/Label.text = "Score: " + str(Global.score)
+	if $Entities/Player.position.y <= -440:
+		Global.score += 1
+		Global.multiply_car_speed_range(1.05)
+		reset_player_pos()
+		$WinSound.play()

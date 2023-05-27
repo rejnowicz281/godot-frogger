@@ -26,17 +26,17 @@ func set_direction():
 		$"Sprite2D".flip_h = false
 
 func set_speed():
-	speed = randi_range(230, 270)
+	var min = Global.car_speed_range[0]
+	var max = Global.car_speed_range[1]
+	speed = randi_range(min, max)
 
 func _ready():
 	set_speed()
 	set_direction()
 	set_random_texture()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	position.x += speed * delta * direction
 
 func _on_body_entered(body):
-	if body.name == "Player":
-		get_tree().change_scene_to_file("res://OverScreen/over_screen.tscn")
+	get_tree().change_scene_to_file("res://OverScreen/over_screen.tscn")

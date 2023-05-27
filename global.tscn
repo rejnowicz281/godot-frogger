@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://x4gffm3otpgr"]
+
+[ext_resource type="Script" path="res://global.gd" id="1_ahl56"]
+[ext_resource type="AudioStream" uid="uid://7qhe88g13xhl" path="res://Audio/Cyber_Space_Hunters.ogg" id="2_4kbf6"]
+
+[node name="Global" type="Node"]
+script = ExtResource("1_ahl56")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_4kbf6")
+volume_db = -20.0
+pitch_scale = 1.5
+autoplay = true

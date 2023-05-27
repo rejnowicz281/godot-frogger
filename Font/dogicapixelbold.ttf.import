@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://dsh7ny3vbdtkn"
-path="res://.godot/imported/BLADRMF_.TTF-3b1a206491cd4bd74eafba232ae3cdaa.fontdata"
+uid="uid://c3n7ft7x1fr7u"
+path="res://.godot/imported/dogicapixelbold.ttf-d64bfd8b5166043fbaec54cd825ba075.fontdata"
 
 [deps]
 
-source_file="res://Font/BLADRMF_.TTF"
-dest_files=["res://.godot/imported/BLADRMF_.TTF-3b1a206491cd4bd74eafba232ae3cdaa.fontdata"]
+source_file="res://Font/dogicapixelbold.ttf"
+dest_files=["res://.godot/imported/dogicapixelbold.ttf-d64bfd8b5166043fbaec54cd825ba075.fontdata"]
 
 [params]
 
